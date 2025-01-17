@@ -1,4 +1,5 @@
 ﻿using _2025contosofuckinyay.Data;
+using _2025contosofuckinyay.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,31 +19,28 @@ namespace _2025contosofuckinyay.Controllers
 
             return View(result);
         }
-        private bool StudentExists(int id)
-        {
-            return _context.Students.Any(e => e.Id == id);
-        }
-        //Clone code block
-        public async Task<IActionResult> Clone(int id)
-        {
-            var student = await _context.Students.FindAsync(id);
-            if (student == null)
-            {
-                return NotFound();
-            }
-            var ClonedStudent = new Student
-            {
-                FirstName = student.FirstName,
-                FirstMidName = student.FirstMidName,
-                EnrollmentDate = student.EnrollmentDate,
-            };
-            _context.Students.Add(ClonedStudent);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
 
-
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Id,LastName,FirstMidName,EnrollmentDate")]Student student)
+        {
             
+            if (ModelState.IsValid)
+            {
+                _schoolContext.Students.Add(student);
+                await _schoolContext.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+
+            return View(student);
+        }
+        
+
         
     }
 }
