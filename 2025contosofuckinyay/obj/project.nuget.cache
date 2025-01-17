@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aE1j9+s27SCL2+LS2uDDuKCYwAcNKUTgiYvtpAODMVntvPETQ2BjGpLnYgA4oL3SswB1uvTdyB6jC05NMUseHg==",
+  "dgSpecHash": "n8DC3/pLK2tGBKizC4nIDt1NfMEh4JR+apq9WDY93w33Wwjk5n4kH+hnD+ZDuJIY7HIP8xnwTPM6FQmfyPfY3A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\opilane\\source\\repos\\kons-shapovalov\\contoso\\2025contosofuckinyay\\2025contosofuckinyay\\2025contosofuckinyay.csproj",
+  "projectFilePath": "C:\\Users\\opilane\\Source\\Repos\\2025contosofuckinyay\\2025contosofuckinyay\\2025contosofuckinyay.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\opilane\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\opilane\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
