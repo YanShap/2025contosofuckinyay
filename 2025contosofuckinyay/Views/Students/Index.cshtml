@@ -21,7 +21,11 @@
             <th>
                 Sisse astunud:
             </th>
+            <th>
+                Tegevused:
+            </th>
         </tr>
+
     </thead>
     <tbody>
         @foreach (var item in Model)
@@ -36,8 +40,13 @@
             <td>
                 @Html.DisplayFor(modelItem =>item.EnrollmentDate)
             </td>
+            <td>
+                <a  asp-action="Delete"class="btn btn-primary" asp-route-id="@item.Id">del</a>
+            </td>
         </tr>
+
         }
         
     </tbody>
+
 </table>

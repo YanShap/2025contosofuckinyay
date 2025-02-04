@@ -39,8 +39,30 @@ namespace _2025contosofuckinyay.Controllers
 
             return View(student);
         }
-        
+        [HttpGet]
+        public async Task<IActionResult>Delete(int ID)
+        {
+            if (ID == null)
+            {
+                return NotFound();
+            }
+            var student = await _schoolContext.Students.FirstOrDefaultAsync(s=>s.Id == ID);
+            if (student == null)
+            {
+                return NotFound();
+            }
+            return View(student);
 
-        
+        }
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult>DeleteConfirmed(int ID)
+        {
+            var student = await _schoolContext.Students.FindAsync(ID);
+            _schoolContext.Students.Remove(student);
+            await _schoolContext.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
     }
 }

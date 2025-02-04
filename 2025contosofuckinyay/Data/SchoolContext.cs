@@ -1,8 +1,5 @@
 ﻿using _2025contosofuckinyay.Models;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Reflection.Emit;
 
 namespace _2025contosofuckinyay.Data
 {
