@@ -63,6 +63,24 @@ namespace _2025contosofuckinyay.Controllers
             await _schoolContext.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public async Task<IActionResult>Details(int ID)
+        {
+
+            if (ID == null)
+            {
+                return NotFound();
+            }
+            var student = await _schoolContext.Students.FirstOrDefaultAsync(s => s.Id == ID);
+            if (student == null)
+            {
+                return NotFound();
+            }
+            return View(student);
+
+        }
+
+
 
     }
 }
