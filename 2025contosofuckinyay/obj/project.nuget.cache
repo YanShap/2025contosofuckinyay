@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eJNrR0TB5rI5D0paIdejd65Zsl4EMjz68eQ4m5rKu2V4H1+YXbVCFpiWZf3OUXAJ8EQ58lAuT3sIh/uCXBvBZA==",
+  "dgSpecHash": "p0AYp7Ofq/+M1GOlJWhuPNjv1neJgrbm8/wxJ65vyowBCudqgBmKklThK7NB+/pD1w5xT3rvxwvqPPj3wE9nWA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\opilane\\source\\repos\\2025contosofuckinyay\\2025contosofuckinyay\\2025contosofuckinyay.csproj",
+  "projectFilePath": "C:\\Users\\opilane\\Source\\Repos\\2025contosofuckinyay\\2025contosofuckinyay\\2025contosofuckinyay.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\opilane\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\opilane\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
@@ -17,9 +17,9 @@
     "C:\\Users\\opilane\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\opilane\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.6\\microsoft.data.sqlclient.5.1.6.nupkg.sha512",
     "C:\\Users\\opilane\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.1.1\\microsoft.data.sqlclient.sni.runtime.5.1.1.nupkg.sha512",
-    "C:\\Users\\opilane\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.11\\microsoft.entityframeworkcore.8.0.11.nupkg.sha512",
-    "C:\\Users\\opilane\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.11\\microsoft.entityframeworkcore.abstractions.8.0.11.nupkg.sha512",
-    "C:\\Users\\opilane\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.11\\microsoft.entityframeworkcore.analyzers.8.0.11.nupkg.sha512",
+    "C:\\Users\\opilane\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.13\\microsoft.entityframeworkcore.8.0.13.nupkg.sha512",
+    "C:\\Users\\opilane\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.13\\microsoft.entityframeworkcore.abstractions.8.0.13.nupkg.sha512",
+    "C:\\Users\\opilane\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.13\\microsoft.entityframeworkcore.analyzers.8.0.13.nupkg.sha512",
     "C:\\Users\\opilane\\.nuget\\packages\\microsoft.entityframeworkcore.design\\8.0.11\\microsoft.entityframeworkcore.design.8.0.11.nupkg.sha512",
     "C:\\Users\\opilane\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\8.0.11\\microsoft.entityframeworkcore.relational.8.0.11.nupkg.sha512",
     "C:\\Users\\opilane\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\8.0.11\\microsoft.entityframeworkcore.sqlserver.8.0.11.nupkg.sha512",

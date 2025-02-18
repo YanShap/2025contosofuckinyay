@@ -2,6 +2,7 @@
 using _2025contosofuckinyay.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Data.Entity;
 
 namespace _2025contosofuckinyay.Controllers
 {
@@ -15,7 +16,7 @@ namespace _2025contosofuckinyay.Controllers
 
         public async Task<IActionResult>Index()
         {
-            var result = await  _schoolContext.Students.ToListAsync();
+            var result = _schoolContext.Students.ToList();
 
             return View(result);
         }
@@ -71,14 +72,43 @@ namespace _2025contosofuckinyay.Controllers
             {
                 return NotFound();
             }
-            var student = await _schoolContext.Students.FirstOrDefaultAsync(s => s.Id == ID);
+            var student = _schoolContext.Students.FirstOrDefault(s => s.Id == ID);
             if (student == null)
             {
                 return NotFound();
             }
             return View(student);
 
+            
+
         }
+        [HttpGet]
+        public async Task<IActionResult> Edit(int ID)
+        {
+            if (ID == null)
+            {
+                return NotFound();
+            }
+            var student = _schoolContext.Students.FirstOrDefault(s => s.Id == ID);
+            if (student == null)
+            {
+                return NotFound();
+            }
+            return View(student);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit([Bind("Id,LastName,FirstMidName,EnrollmentDate")] Student student)
+        {
+            _schoolContext.Students.Update(student);
+            await _schoolContext.SaveChangesAsync();
+            return RedirectToAction("Index", student);
+        }
+
+       
+
+
+
 
 
 
