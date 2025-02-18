@@ -104,8 +104,28 @@ namespace _2025contosofuckinyay.Controllers
             await _schoolContext.SaveChangesAsync();
             return RedirectToAction("Index", student);
         }
+        public async Task<IActionResult> Clone(int ID)
+        {
+            var student = _schoolContext.Students.FirstOrDefault(s => s.Id == ID);
+            if (student == null)
+            {
+                return NotFound();
+            }
 
-       
+
+            var CloneStudent = new Student
+            {
+                LastName = student.LastName,
+                FirstMidName = student.FirstMidName,
+                EnrollmentDate = student.EnrollmentDate,
+            };
+            _schoolContext.Students.Add(CloneStudent);
+            await _schoolContext.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+
+
 
 
 

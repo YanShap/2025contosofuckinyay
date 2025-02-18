@@ -46,6 +46,10 @@
                         <a asp-action="Delete" class="btn btn-primary" asp-route-id="@item.Id">Delete</a>
                         <a asp-action="Details" class="btn btn-primary" asp-route-id="@item.Id">Details</a>
                         <a asp-action="Edit" class="btn btn-primary" asp-route-id="@item.Id">Edit</a>
+                        <form method="post">
+                            <a asp-action="Clone" class="btn btn-primary" asp-route-id="@item.Id">Clone</a>
+                        </form>
+
                     </td>
                 </tr>
 
