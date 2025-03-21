@@ -27,25 +27,6 @@ namespace _2025contosofuckinyay.Controllers
             return View(vm);
         }
         [HttpGet]
-        public IActionResult Create()
-        {
-            return View();
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,LastName,FirstMidName,HireDate,OfficeAssignment,CourseAssignments,Field")] Instructor instructor)
-        {
-
-            if (ModelState.IsValid)
-            {
-                _context.Instructors.Add(instructor);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
-            }
-
-            return View(instructor);
-        }
-        [HttpGet]
         public async Task<IActionResult> Details(int ID)
         {
 
@@ -60,7 +41,32 @@ namespace _2025contosofuckinyay.Controllers
             }
             return View(Instructor);
         }
-
+        [HttpGet]
+        public async Task<IActionResult> Delete(int ID)
+        {
+            if (ID == null)
+            {
+                return NotFound();
+            }
+            var Instructor = await _context.Instructors.FirstOrDefaultAsync(s => s.Id == ID);
+            if (Instructor == null)
+            {
+                return NotFound();
+            }
+            return View(Instructor);
 
         }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int ID)
+        {
+            var Instructor = await _context.Instructors.FindAsync(ID);
+            _context.Instructors.Remove(Instructor);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+
+    }
     }
