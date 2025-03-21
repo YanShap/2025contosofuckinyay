@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "C:\\Users\\opilane\\Source\\Repos\\2025contosofuckinyay\\2025contosofuckinyay\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\2025contosofuckinyay.bundle.scp.css",
-      "PackagePath": "staticwebassets\\2025contosofuckinyay.bundle.scp.css"
+      "PackagePath": "staticwebassets\\2025contosofuckinyay.29ylbktnob.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\opilane\\Source\\Repos\\2025contosofuckinyay\\2025contosofuckinyay\\wwwroot\\css\\site.css",
@@ -243,6 +243,10 @@
     {
       "Id": "C:\\Users\\opilane\\Source\\Repos\\2025contosofuckinyay\\2025contosofuckinyay\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.2025contosofuckinyay.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.2025contosofuckinyay.Microsoft.AspNetCore.StaticWebAssets.props",

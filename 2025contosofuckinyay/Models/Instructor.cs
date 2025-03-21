@@ -15,7 +15,7 @@ namespace _2025contosofuckinyay.Models
         public string LastName { get; set; }
         [Required]
         [StringLength(50)]
-        [Display(Name = "Last name")]
+        [Display(Name = "First name")]
         [Column("First name")]
         public string FirstMidName { get; set; }
         [Display(Name ="Full name")]

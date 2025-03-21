@@ -35,7 +35,9 @@
                 <td>@Html.DisplayFor(modelItem => item.CourseAssignments)</td>
                 <td>@Html.DisplayFor(modelItem => item.Field)</td>
 
-                <td></td>
+                <td>
+                    <a asp-action="Details" class="btn btn-primary" asp-route-id="@item.Id">Detailid</a>
+                </td>
             </tr>
         }
     </tbody>

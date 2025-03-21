@@ -26,6 +26,41 @@ namespace _2025contosofuckinyay.Controllers
             }
             return View(vm);
         }
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Id,LastName,FirstMidName,HireDate,OfficeAssignment,CourseAssignments,Field")] Instructor instructor)
+        {
 
+            if (ModelState.IsValid)
+            {
+                _context.Instructors.Add(instructor);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+
+            return View(instructor);
+        }
+        [HttpGet]
+        public async Task<IActionResult> Details(int ID)
+        {
+
+            if (ID == null)
+            {
+                return NotFound();
+            }
+            var Instructor = _context.Instructors.FirstOrDefault(s => s.Id == ID);
+            if (Instructor == null)
+            {
+                return NotFound();
+            }
+            return View(Instructor);
+        }
+
+
+        }
     }
-}

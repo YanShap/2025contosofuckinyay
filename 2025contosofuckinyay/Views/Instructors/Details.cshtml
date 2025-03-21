@@ -1,0 +1,61 @@
+﻿@model _2025contosofuckinyay.Models.Instructor
+
+@{
+	ViewData["Title"] = "Õpetaja Ülevaade";
+}
+
+<h1>Õpetaja</h1>
+<div>
+	<h2>
+		juhedaja @Html.DisplayFor(model=>model.FullName)
+	</h2>
+	<hr />
+	<dl>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model=>model.LastName)
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayFor(model=>model.LastName)
+		</dt>
+
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model=>model.FirstMidName)
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayFor(model=>model.FirstMidName)
+		</dt>
+
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model=>model.HireDate)
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayFor(model => model.HireDate)
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model=>model.CourseAssignments)
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayFor(model => model.CourseAssignments)
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model=>model.OfficeAssignment)
+		</dt>
+		<dt class="col-sm-2">
+			@{
+				if (Model.OfficeAssignment != null)
+				{
+					<dt class="col-sm-2">@Html.DisplayFor(model=>model.OfficeAssignment.Location)</dt>
+
+				}
+			}
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model=>model.Field)
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayFor(model => model.Field)
+		</dt>
+	</dl>
+
+</div>
+	

@@ -195,7 +195,6 @@ C:\Users\opilane\Source\Repos\2025contosofuckinyay\2025contosofuckinyay\bin\Debu
 C:\Users\opilane\Source\Repos\2025contosofuckinyay\2025contosofuckinyay\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 C:\Users\opilane\Source\Repos\2025contosofuckinyay\2025contosofuckinyay\bin\Debug\net8.0\System.Data.SqlClient.dll
 C:\Users\opilane\Source\Repos\2025contosofuckinyay\2025contosofuckinyay\bin\Debug\net8.0\System.Drawing.Common.dll
-C:\Users\opilane\Source\Repos\2025contosofuckinyay\2025contosofuckinyay\bin\Debug\net8.0\System.Formats.Asn1.dll
 C:\Users\opilane\Source\Repos\2025contosofuckinyay\2025contosofuckinyay\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\opilane\Source\Repos\2025contosofuckinyay\2025contosofuckinyay\bin\Debug\net8.0\System.Memory.Data.dll
 C:\Users\opilane\Source\Repos\2025contosofuckinyay\2025contosofuckinyay\bin\Debug\net8.0\System.Runtime.Caching.dll
@@ -296,3 +295,7 @@ C:\Users\opilane\Source\Repos\2025contosofuckinyay\2025contosofuckinyay\obj\Debu
 C:\Users\opilane\Source\Repos\2025contosofuckinyay\2025contosofuckinyay\obj\Debug\net8.0\2025contosofuckinyay.pdb
 C:\Users\opilane\Source\Repos\2025contosofuckinyay\2025contosofuckinyay\obj\Debug\net8.0\2025contosofuckinyay.genruntimeconfig.cache
 C:\Users\opilane\Source\Repos\2025contosofuckinyay\2025contosofuckinyay\obj\Debug\net8.0\ref\2025contosofuckinyay.dll
+C:\Users\opilane\Source\Repos\2025contosofuckinyay\2025contosofuckinyay\bin\Debug\net8.0\2025contosofuckinyay.staticwebassets.endpoints.json
+C:\Users\opilane\Source\Repos\2025contosofuckinyay\2025contosofuckinyay\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\opilane\Source\Repos\2025contosofuckinyay\2025contosofuckinyay\obj\Debug\net8.0\staticwebassets\msbuild.2025contosofuckinyay.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\opilane\Source\Repos\2025contosofuckinyay\2025contosofuckinyay\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
