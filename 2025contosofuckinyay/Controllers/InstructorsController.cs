@@ -109,10 +109,34 @@ namespace _2025contosofuckinyay.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction("Index", instructor);
         }
-       
+        public async Task<IActionResult> Clone(int ID)
+        {
+            var instructor = await _context.Instructors.FirstOrDefaultAsync(s => s.Id == ID);
+            if (instructor == null)
+            {
+                return NotFound();
+            }
+
+
+            var cloneInstructor = new Instructor()
+            {
+
+
+            };
+            cloneInstructor.LastName = instructor.LastName;
+            cloneInstructor.FirstMidName = instructor.FirstMidName;
+            cloneInstructor.HireDate = instructor.HireDate;
+            cloneInstructor.OfficeAssignment = instructor.OfficeAssignment;
+            cloneInstructor.CourseAssignments = instructor.CourseAssignments;
+            cloneInstructor.Field = instructor.Field;
+            _context.Instructors.Add(cloneInstructor);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
 
 
 
 
     }
-    }
+}
