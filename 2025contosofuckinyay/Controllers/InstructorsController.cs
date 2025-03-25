@@ -87,6 +87,29 @@ namespace _2025contosofuckinyay.Controllers
             }
             return View(instructor);
         }
+        [HttpGet]
+        public async Task<IActionResult> Edit(int ID)
+        {
+            if (ID == null)
+            {
+                return NotFound();
+            }
+            var Instructor = await _context.Instructors.FirstOrDefaultAsync(s => s.Id == ID);
+            if (Instructor == null)
+            {
+                return NotFound();
+            }
+            return View(Instructor);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit([Bind("Id,LastName,FirstMidName,HireDate,OfficeAssigment,CourseAssigment,Field")] Instructor instructor)
+        {
+            _context.Instructors.Update(instructor);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index", instructor);
+        }
+       
 
 
 
