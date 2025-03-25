@@ -34,12 +34,12 @@ namespace _2025contosofuckinyay.Controllers
             {
                 return NotFound();
             }
-            var Instructor = _context.Instructors.FirstOrDefault(s => s.Id == ID);
-            if (Instructor == null)
+            var instructor = _context.Instructors.FirstOrDefault(s => s.Id == ID);
+            if (instructor == null)
             {
                 return NotFound();
             }
-            return View(Instructor);
+            return View(instructor);
         }
         [HttpGet]
         public async Task<IActionResult> Delete(int ID)
@@ -48,12 +48,12 @@ namespace _2025contosofuckinyay.Controllers
             {
                 return NotFound();
             }
-            var Instructor = await _context.Instructors.FirstOrDefaultAsync(s => s.Id == ID);
-            if (Instructor == null)
+            var instructor = await _context.Instructors.FirstOrDefaultAsync(s => s.Id == ID);
+            if (instructor == null)
             {
                 return NotFound();
             }
-            return View(Instructor);
+            return View(instructor);
 
         }
 
@@ -61,11 +61,34 @@ namespace _2025contosofuckinyay.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int ID)
         {
-            var Instructor = await _context.Instructors.FindAsync(ID);
-            _context.Instructors.Remove(Instructor);
+            var instructor = await _context.Instructors.FindAsync(ID);
+            _context.Instructors.Remove(instructor);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            var instructor = new Instructor();
+            instructor.CourseAssignments = new List<CourseAssignment>();
+            return View();
+
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Instructor instructor)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(instructor);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return View(instructor);
+        }
+
+
 
 
     }
