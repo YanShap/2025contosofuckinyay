@@ -2,13 +2,17 @@
 using _2025contosofuckinyay.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Data.Entity;
+
 
 namespace _2025contosofuckinyay.Controllers
 {
     public class StudentsController : Controller
     {
         public readonly SchoolContext _schoolContext;
+        public StudentsController()
+        {
+            
+        }
         public StudentsController(SchoolContext schoolContext)
         {
             _schoolContext = schoolContext;
