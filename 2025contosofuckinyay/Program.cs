@@ -1,6 +1,12 @@
 
+using System;
 using _2025contosofuckinyay.Data;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 internal class Program
 {

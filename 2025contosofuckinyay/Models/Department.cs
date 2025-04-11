@@ -1,5 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using System;
 
 namespace _2025contosofuckinyay.Models
 {
@@ -7,14 +9,14 @@ namespace _2025contosofuckinyay.Models
     {
         [Key]
         public int Id { get; set; }
-        [StringLength(50,MinimumLength = 3)]
+        [StringLength(50, MinimumLength = 3)]
         public string Name { get; set; }
-        [Column(TypeName="Money")]
+        [Display(Name = "Money")]
         public string Budget { get; set; }
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}",ApplyFormatInEditMode = true)]
+        //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}",ApplyFormatInEditMode = true)]
         public DateTime OpeningDate { get; set; }
-        public string Address {  get; set; }
+        public string Address { get; set; }
         public string OpenTime { get; set; }
         public string Description { get; set; }
         public string ShortName { get; set; }
@@ -22,8 +24,5 @@ namespace _2025contosofuckinyay.Models
         public byte? RowVersion { get; set; }
         public Instructor? Administrator { get; set; }
         public ICollection<Course>? Courses { get; set; }
-        
-        
-
     }
 }

@@ -1,0 +1,65 @@
+﻿@model _2025contosofuckinyay.Models.Department
+
+@{
+	ViewData["Title"] = "Create";
+}
+<h2>Loo uus Osakond</h2>
+<hr />
+<div class="row" >
+	<div class="col-md-4">
+		<form asp-action="Create">
+			<input type="hidden" asp-for="RowVersion" value="@Html.Raw("0")" />
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			
+			<div class="form-group">
+				<label asp-for="Name" class="control-label" ></label>
+				<input asp-for="Name" class="form-control"/>
+				<span asp-validation-for="Name" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Budget" class="control-label"></label>
+				<input asp-for="Budget" class="form-control" />
+				<span asp-validation-for="Budget" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="OpeningDate" class="control-label"></label>
+				<input asp-for="OpeningDate" class="form-control" />
+				<span asp-validation-for="OpeningDate" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Address" class="control-label"></label>
+				<input asp-for="Address" class="form-control" />
+				<span asp-validation-for="Address" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="OpenTime" class="control-label"></label>
+				<input asp-for="OpenTime" class="form-control" />
+				<span asp-validation-for="OpenTime" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Description" class="control-label"></label>
+				<input asp-for="Description" class="form-control" />
+				<span asp-validation-for="Description" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="ShortName" class="control-label"></label>
+				<input asp-for="ShortName" class="form-control" />
+				<span asp-validation-for="ShortName" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="InstructorID" class="control-label"></label>
+				<select asp-for="InstructorID" class="form-control" asp-items="ViewBag.InstructorId">
+					<option value="">vali õpetaja</option>
+				</select>
+				<span asp-validation-for="InstructorID" class="text-danger"></span>
+
+			</div>
+			<div class="form-group">
+				<input type="submit" value="tee osakond" class="btn btn-primary"   />
+
+			</div>
+
+		</form>
+		<a asp-action="index" class="btn btn-outline-primary">Tühista</a>
+	</div>
+</div>

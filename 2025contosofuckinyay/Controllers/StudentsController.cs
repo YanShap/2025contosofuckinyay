@@ -1,4 +1,6 @@
-﻿using _2025contosofuckinyay.Data;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using _2025contosofuckinyay.Data;
 using _2025contosofuckinyay.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

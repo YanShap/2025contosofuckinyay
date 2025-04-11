@@ -1,4 +1,6 @@
-﻿namespace _2025contosofuckinyay.Models
+﻿using System.Collections.Generic;
+
+namespace _2025contosofuckinyay.Models
 {
     public class Course
     {

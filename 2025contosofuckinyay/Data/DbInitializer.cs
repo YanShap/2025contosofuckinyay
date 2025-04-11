@@ -1,4 +1,6 @@
-﻿using _2025contosofuckinyay.Models;
+﻿using System;
+using System.Linq;
+using _2025contosofuckinyay.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace _2025contosofuckinyay.Data
