@@ -5,7 +5,6 @@ using _2025contosofuckinyay.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.FileSystemGlobbing.Internal.PatternContexts;
 
 namespace _2025contosofuckinyay.Controllers
@@ -59,6 +58,30 @@ namespace _2025contosofuckinyay.Controllers
                 return NotFound();
             }
             return View(department);
+        }
+        public async Task<IActionResult> Delete(int ID)
+        {
+            if (ID == null)
+            {
+                return NotFound();
+            }
+            var department = await _context.Departments.FirstOrDefaultAsync(s => s.Id == ID);
+            if (department == null)
+            {
+                return NotFound();
+            }
+            return View(department);
+
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int ID)
+        {
+            var department = await _context.Departments.FindAsync(ID);
+            _context.Departments.Remove(department);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
         }
     }
 }

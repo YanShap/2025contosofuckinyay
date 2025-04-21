@@ -1,0 +1,84 @@
+﻿@model _2025contosofuckinyay.Models.Department
+@{
+	ViewData["Title"] = "Osakonna kustutamine";
+}
+
+<h1>Osakond</h1>
+<div>
+	<dl>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Name)
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayFor(model => model.Name)
+		</dt>
+
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Budget)
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayFor(model => model.Budget)
+		</dt>
+
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.OpeningDate)
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayFor(model => model.OpeningDate)
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Address)
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayFor(model => model.Address)
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.OpenTime)
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayFor(model => model.OpenTime)
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Description)
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayFor(model => model.Description)
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.ShortName)
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayFor(model => model.ShortName)
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Administrator)
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayFor(model => model.Administrator)
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.InstructorID)
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayFor(model => model.InstructorID)
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.RowVersion)
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayFor(model => model.RowVersion)
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Courses)
+		</dt>
+		<dt class="col-sm-2">
+			@Html.DisplayFor(model => model.Courses)
+		</dt>
+	</dl>
+</div>
+
+<form asp-action="Delete">
+	<input type="hidden" asp-for="Id" />
+	<input type="submit" value="Kustuta" class="btn btn-danger" />
+	<a asp-action="Index">Tühista kustutamine</a>
+</form>
