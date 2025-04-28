@@ -1,5 +1,69 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model _2025contosofuckinyay.Models.Department
 @{
+	ViewData["Title"] = "Osakonna muutmine";
 }
+<h1>Muuda osakonna andmeid @Model.Name</h1>
+<h4>Muuda osakonna info allgjärgnevasse vormi</h4>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Budget" class="control-label"></label>
+                <input asp-for="Budget" class="form-control" />
+                <span asp-validation-for="Budget" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OpeningDate" class="control-label"></label>
+                <input asp-for="OpeningDate" class="form-control" />
+                <span asp-validation-for="OpeningDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OpenTime" class="control-label"></label>
+                <input asp-for="OpenTime" class="form-control" />
+                <span asp-validation-for="OpenTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShortName" class="control-label"></label>
+                <input asp-for="ShortName" class="form-control" />
+                <span asp-validation-for="ShortName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RowVersion" class="control-label"></label>
+                <input asp-for="RowVersion" class="form-control" />
+                <span asp-validation-for="RowVersion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Administrator" class="control-label"></label>
+                <input asp-for="Administrator" class="form-control" />
+                <span asp-validation-for="Administrator" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Courses" class="control-label"></label>
+                <input asp-for="Courses" class="form-control" />
+                <span asp-validation-for="Courses" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-primary">Salvesta</button>
+
+
+        </form>
+    </div>
+</div>
+

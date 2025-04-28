@@ -147,3 +147,4 @@ C:\Users\opilane\Source\Repos\2025contosofuckinyay\2025contosofuckinyay\obj\Debu
 C:\Users\opilane\Source\Repos\2025contosofuckinyay\2025contosofuckinyay\obj\Debug\net8.0\2025contosofuckinyay.pdb
 C:\Users\opilane\Source\Repos\2025contosofuckinyay\2025contosofuckinyay\obj\Debug\net8.0\2025contosofuckinyay.genruntimeconfig.cache
 C:\Users\opilane\Source\Repos\2025contosofuckinyay\2025contosofuckinyay\obj\Debug\net8.0\ref\2025contosofuckinyay.dll
+C:\Users\opilane\Source\Repos\2025contosofuckinyay\2025contosofuckinyay\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll

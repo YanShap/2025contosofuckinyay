@@ -83,5 +83,26 @@ namespace _2025contosofuckinyay.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+        public async Task<IActionResult> Edit(int ID)
+        {
+            if (ID == null)
+            {
+                return NotFound();
+            }
+            var Departments = await _context.Departments.FirstOrDefaultAsync(s => s.Id == ID);
+            if (Departments == null)
+            {
+                return NotFound();
+            }
+            return View(Departments);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit([Bind("Id,LastName,FirstMidName,HireDate,OfficeAssigment,CourseAssigment,Field")] Department department)
+        {
+            _context.Departments.Update(department);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index", department);
+        }
     }
 }

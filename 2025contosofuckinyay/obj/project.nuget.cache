@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "sZE4wcQ+BSE=",
+  "dgSpecHash": "mI2jMmPDxKw=",
   "success": true,
   "projectFilePath": "C:\\Users\\opilane\\Source\\Repos\\2025contosofuckinyay\\2025contosofuckinyay\\2025contosofuckinyay.csproj",
   "expectedPackageFiles": [
@@ -21,6 +21,7 @@
     "C:\\Users\\opilane\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.15\\microsoft.entityframeworkcore.abstractions.8.0.15.nupkg.sha512",
     "C:\\Users\\opilane\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.15\\microsoft.entityframeworkcore.analyzers.8.0.15.nupkg.sha512",
     "C:\\Users\\opilane\\.nuget\\packages\\microsoft.entityframeworkcore.design\\8.0.15\\microsoft.entityframeworkcore.design.8.0.15.nupkg.sha512",
+    "C:\\Users\\opilane\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\8.0.15\\microsoft.entityframeworkcore.inmemory.8.0.15.nupkg.sha512",
     "C:\\Users\\opilane\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\8.0.15\\microsoft.entityframeworkcore.relational.8.0.15.nupkg.sha512",
     "C:\\Users\\opilane\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\8.0.15\\microsoft.entityframeworkcore.sqlserver.8.0.15.nupkg.sha512",
     "C:\\Users\\opilane\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\8.0.15\\microsoft.entityframeworkcore.tools.8.0.15.nupkg.sha512",
