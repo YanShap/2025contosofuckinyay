@@ -44,7 +44,7 @@ namespace _2025contosofuckinyay.Controllers
 
 
         }
-        [HttpPost]
+        [HttpGet]
         public async Task<IActionResult> Details(int ID)
         {
 
@@ -98,11 +98,68 @@ namespace _2025contosofuckinyay.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit([Bind("Id,LastName,FirstMidName,HireDate,OfficeAssigment,CourseAssigment,Field")] Department department)
+        public async Task<IActionResult> Edit([Bind("Id,Name,Budget,OpeningDate,Address,OpenTime,Description,ShortName,InstructorID,RowVersion,Administrator")] Department department)
         {
             _context.Departments.Update(department);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index", department);
+        }
+        [HttpGet]
+        public IActionResult Make()
+        {
+            ViewData["InstructorID"] = new SelectList(_context.Instructors, "Id", "FullName");
+            return View();
+
+        }
+        public async Task<IActionResult> BaseOn(int ID)
+        {
+            if (ID == null)
+            {
+                return NotFound();
+            }
+            var Departments = await _context.Departments.FirstOrDefaultAsync(s => s.Id == ID);
+            if (Departments == null)
+            {
+                return NotFound();
+            }
+            return View(Departments);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> BaseOn([Bind("Id,Name,Budget,OpeningDate,Address,OpenTime,Description,ShortName,InstructorID,RowVersion,Administrator")] Department department)
+        {
+            _context.Departments.Update(department);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index", department);
+        }
+
+        public async Task<IActionResult> Make(int ID)
+        {
+            var department = await _context.Departments.FirstOrDefaultAsync(s => s.Id == ID);
+            if (department == null)
+            {
+                return NotFound();
+            }
+
+
+            var cloneDepartment = new Department()
+            {
+
+
+            };
+            cloneDepartment.Name = department.Name;
+            cloneDepartment.Budget = department.Budget;
+            cloneDepartment.OpeningDate = department.OpeningDate;
+            cloneDepartment.Address = department.Address;
+            cloneDepartment.Address = department.OpenTime;
+            cloneDepartment.Description = department.Description;
+            cloneDepartment.ShortName = department.ShortName;
+            cloneDepartment.InstructorID = department.InstructorID;
+            cloneDepartment.InstructorID = department.RowVersion;
+            cloneDepartment.Administrator = department.Administrator;
+            _context.Departments.Add(cloneDepartment);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
     }
 }
