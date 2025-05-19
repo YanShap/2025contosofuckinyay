@@ -46,11 +46,6 @@
 				<span asp-validation-for="ShortName" class="text-danger"></span>
 			</div>
 			<div class="form-group">
-				<label asp-for="RowVersion" class="control-label"></label>
-				<input asp-for="RowVersion" class="form-control" />
-				<span asp-validation-for="RowVersion" class="text-danger"></span>
-			</div>
-			<div class="form-group">
 				<label asp-for="Administrator" class="control-label"></label>
 				<input asp-for="Administrator" class="form-control" />
 				<span asp-validation-for="Administrator" class="text-danger"></span>
@@ -61,8 +56,8 @@
 				<span asp-validation-for="Courses" class="text-danger"></span>
 			</div>
 			<input type="hidden" asp-for="Id" />
-			<button type="submit" class="btn btn-primary">Make</button>
-			<button type="submit" class="btn btn-primary">Make & Delete Old</button>
+			<button type="submit" name="action" value="make" class="btn btn-primary">Make</button>
+			<button type="submit" name="action" value="makeAndDelete" class="btn btn-primary">Make & Delete Old</button>
 
 
 

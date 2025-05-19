@@ -126,9 +126,10 @@ namespace _2025contosofuckinyay.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> BaseOn([Bind("Id,Name,Budget,OpeningDate,Address,OpenTime,Description,ShortName,InstructorID,RowVersion,Administrator")] Department department)
+        public async Task<IActionResult> BaseOn([Bind("Name,Budget,OpeningDate,Address,OpenTime,Description,ShortName,InstructorID,Administrator")] Department department)
         {
-            _context.Departments.Update(department);
+            department.Id = 0;
+            _context.Departments.Add(department);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index", department);
         }
@@ -145,18 +146,18 @@ namespace _2025contosofuckinyay.Controllers
             var cloneDepartment = new Department()
             {
 
-
             };
+
             cloneDepartment.Name = department.Name;
             cloneDepartment.Budget = department.Budget;
             cloneDepartment.OpeningDate = department.OpeningDate;
             cloneDepartment.Address = department.Address;
-            cloneDepartment.Address = department.OpenTime;
+            cloneDepartment.OpenTime = department.OpenTime;
             cloneDepartment.Description = department.Description;
             cloneDepartment.ShortName = department.ShortName;
             cloneDepartment.InstructorID = department.InstructorID;
-            cloneDepartment.InstructorID = department.RowVersion;
             cloneDepartment.Administrator = department.Administrator;
+
             _context.Departments.Add(cloneDepartment);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

@@ -12,8 +12,8 @@ using _2025contosofuckinyay.Data;
 namespace _2025contosofuckinyay.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    [Migration("20250411132322_fc2")]
-    partial class fc2
+    [Migration("20250519110113_dfg1")]
+    partial class dfg1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,7 +33,7 @@ namespace _2025contosofuckinyay.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CourseID"));
 
-                    b.Property<int?>("FieldCampusId")
+                    b.Property<int?>("DepartmentId")
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
@@ -45,7 +45,7 @@ namespace _2025contosofuckinyay.Migrations
 
                     b.HasKey("CourseID");
 
-                    b.HasIndex("FieldCampusId");
+                    b.HasIndex("DepartmentId");
 
                     b.ToTable("Course");
                 });
@@ -71,6 +71,55 @@ namespace _2025contosofuckinyay.Migrations
                     b.HasIndex("InstructorId");
 
                     b.ToTable("CourseAssignments", (string)null);
+                });
+
+            modelBuilder.Entity("_2025contosofuckinyay.Models.Department", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Budget")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("InstructorID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("OpenTime")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("OpeningDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<byte?>("RowVersion")
+                        .HasColumnType("tinyint");
+
+                    b.Property<string>("ShortName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InstructorID");
+
+                    b.ToTable("Departments", (string)null);
                 });
 
             modelBuilder.Entity("_2025contosofuckinyay.Models.Enrollment", b =>
@@ -100,54 +149,6 @@ namespace _2025contosofuckinyay.Migrations
                     b.HasIndex("StudentId");
 
                     b.ToTable("Enrollments", (string)null);
-                });
-
-            modelBuilder.Entity("_2025contosofuckinyay.Models.FieldCampus", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Budget")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("InstructorID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OpenTime")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("OpeningDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<byte?>("RowVersion")
-                        .HasColumnType("tinyint");
-
-                    b.Property<string>("ShortName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("InstructorID");
-
-                    b.ToTable("FieldCampuses", (string)null);
                 });
 
             modelBuilder.Entity("_2025contosofuckinyay.Models.Instructor", b =>
@@ -231,9 +232,9 @@ namespace _2025contosofuckinyay.Migrations
 
             modelBuilder.Entity("_2025contosofuckinyay.Models.Course", b =>
                 {
-                    b.HasOne("_2025contosofuckinyay.Models.FieldCampus", null)
+                    b.HasOne("_2025contosofuckinyay.Models.Department", null)
                         .WithMany("Courses")
-                        .HasForeignKey("FieldCampusId");
+                        .HasForeignKey("DepartmentId");
                 });
 
             modelBuilder.Entity("_2025contosofuckinyay.Models.CourseAssignment", b =>
@@ -255,6 +256,15 @@ namespace _2025contosofuckinyay.Migrations
                     b.Navigation("Instructor");
                 });
 
+            modelBuilder.Entity("_2025contosofuckinyay.Models.Department", b =>
+                {
+                    b.HasOne("_2025contosofuckinyay.Models.Instructor", "Administrator")
+                        .WithMany()
+                        .HasForeignKey("InstructorID");
+
+                    b.Navigation("Administrator");
+                });
+
             modelBuilder.Entity("_2025contosofuckinyay.Models.Enrollment", b =>
                 {
                     b.HasOne("_2025contosofuckinyay.Models.Course", "Course")
@@ -274,15 +284,6 @@ namespace _2025contosofuckinyay.Migrations
                     b.Navigation("Student");
                 });
 
-            modelBuilder.Entity("_2025contosofuckinyay.Models.FieldCampus", b =>
-                {
-                    b.HasOne("_2025contosofuckinyay.Models.Instructor", "Administrator")
-                        .WithMany()
-                        .HasForeignKey("InstructorID");
-
-                    b.Navigation("Administrator");
-                });
-
             modelBuilder.Entity("_2025contosofuckinyay.Models.OfficeAssignment", b =>
                 {
                     b.HasOne("_2025contosofuckinyay.Models.Instructor", null)
@@ -297,7 +298,7 @@ namespace _2025contosofuckinyay.Migrations
                     b.Navigation("Enrollments");
                 });
 
-            modelBuilder.Entity("_2025contosofuckinyay.Models.FieldCampus", b =>
+            modelBuilder.Entity("_2025contosofuckinyay.Models.Department", b =>
                 {
                     b.Navigation("Courses");
                 });

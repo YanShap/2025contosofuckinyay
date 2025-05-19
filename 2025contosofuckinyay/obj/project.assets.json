@@ -4074,23 +4074,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\opilane\\.nuget\\packages\\": {},
+    "C:\\Users\\Guest User\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\opilane\\Source\\Repos\\2025contosofuckinyay\\2025contosofuckinyay\\2025contosofuckinyay.csproj",
+      "projectUniqueName": "C:\\Users\\Guest User\\Source\\Repos\\2025contosofuckinyay\\2025contosofuckinyay\\2025contosofuckinyay.csproj",
       "projectName": "2025contosofuckinyay",
-      "projectPath": "C:\\Users\\opilane\\Source\\Repos\\2025contosofuckinyay\\2025contosofuckinyay\\2025contosofuckinyay.csproj",
-      "packagesPath": "C:\\Users\\opilane\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\opilane\\Source\\Repos\\2025contosofuckinyay\\2025contosofuckinyay\\obj\\",
+      "projectPath": "C:\\Users\\Guest User\\Source\\Repos\\2025contosofuckinyay\\2025contosofuckinyay\\2025contosofuckinyay.csproj",
+      "packagesPath": "C:\\Users\\Guest User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Guest User\\Source\\Repos\\2025contosofuckinyay\\2025contosofuckinyay\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\opilane\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Guest User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4099,7 +4099,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4172,7 +4171,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
