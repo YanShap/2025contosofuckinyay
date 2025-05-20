@@ -12,8 +12,8 @@ using _2025contosofuckinyay.Data;
 namespace _2025contosofuckinyay.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    [Migration("20250519110113_dfg1")]
-    partial class dfg1
+    [Migration("20250520134935_DFG3")]
+    partial class DFG3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,6 +33,9 @@ namespace _2025contosofuckinyay.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CourseID"));
 
+                    b.Property<int>("Credits")
+                        .HasColumnType("int");
+
                     b.Property<int?>("DepartmentId")
                         .HasColumnType("int");
 
@@ -40,14 +43,11 @@ namespace _2025contosofuckinyay.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("credits")
-                        .HasColumnType("int");
-
                     b.HasKey("CourseID");
 
                     b.HasIndex("DepartmentId");
 
-                    b.ToTable("Course");
+                    b.ToTable("Courses", (string)null);
                 });
 
             modelBuilder.Entity("_2025contosofuckinyay.Models.CourseAssignment", b =>

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<_2025contosofuckinyay.Models.Course>
+
+@{
+	ViewData["Title"] = "Kursused";
+}
+
+<h1>Kursus </h1>
+<p>
+	<a asp-action="Create">Loo uus kursus</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th> @Html.DisplayNameFor(model => model.Title)</th>
+            <th> @Html.DisplayNameFor(model => model.Credits)</th>
+            <th>Osalejad</th>
+            <th>Tegevused</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var course in Model)
+        {
+            <tr>
+
+                <td> @Html.DisplayFor(model => course.Title)</td>
+                <td> @Html.DisplayFor(model => course.Credits)</td>
+                <td>@(course.Enrollments?.Count ?? 0)</td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@course.CourseID">Muuda</a> |
+                    <a asp-action="Details" asp-route-id="@course.CourseID">Vaata</a> |
+                    <a asp-action="Delete" asp-route-id="@course.CourseID">Kustuta</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

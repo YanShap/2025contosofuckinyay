@@ -4,13 +4,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\2025contosofuckinyay.29ylbktnob.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"29ylbktnob"},{"Name":"integrity","Value":"sha256-WhQRoXQOVDnrCrGozsNucJ/yAf\u002BVRxIKhzwfEePzfXw="},{"Name":"label","Value":"_content/2025contosofuckinyay/2025contosofuckinyay.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1138"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022WhQRoXQOVDnrCrGozsNucJ/yAf\u002BVRxIKhzwfEePzfXw=\u0022"},{"Name":"Last-Modified","Value":"Mon, 19 May 2025 11:22:17 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1138"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022WhQRoXQOVDnrCrGozsNucJ/yAf\u002BVRxIKhzwfEePzfXw=\u0022"},{"Name":"Last-Modified","Value":"Tue, 20 May 2025 13:50:31 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/2025contosofuckinyay/2025contosofuckinyay.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\2025contosofuckinyay.29ylbktnob.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-WhQRoXQOVDnrCrGozsNucJ/yAf\u002BVRxIKhzwfEePzfXw="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1138"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022WhQRoXQOVDnrCrGozsNucJ/yAf\u002BVRxIKhzwfEePzfXw=\u0022"},{"Name":"Last-Modified","Value":"Mon, 19 May 2025 11:22:17 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1138"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022WhQRoXQOVDnrCrGozsNucJ/yAf\u002BVRxIKhzwfEePzfXw=\u0022"},{"Name":"Last-Modified","Value":"Tue, 20 May 2025 13:50:31 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/2025contosofuckinyay/css/site.c2tiyv64ts.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>

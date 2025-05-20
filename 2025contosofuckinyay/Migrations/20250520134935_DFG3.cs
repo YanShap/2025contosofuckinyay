@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace _2025contosofuckinyay.Migrations
 {
     /// <inheritdoc />
-    public partial class dfg1 : Migration
+    public partial class DFG3 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -89,20 +89,20 @@ namespace _2025contosofuckinyay.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Course",
+                name: "Courses",
                 columns: table => new
                 {
                     CourseID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    credits = table.Column<int>(type: "int", nullable: false),
+                    Credits = table.Column<int>(type: "int", nullable: false),
                     DepartmentId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Course", x => x.CourseID);
+                    table.PrimaryKey("PK_Courses", x => x.CourseID);
                     table.ForeignKey(
-                        name: "FK_Course_Departments_DepartmentId",
+                        name: "FK_Courses_Departments_DepartmentId",
                         column: x => x.DepartmentId,
                         principalTable: "Departments",
                         principalColumn: "Id");
@@ -121,9 +121,9 @@ namespace _2025contosofuckinyay.Migrations
                 {
                     table.PrimaryKey("PK_CourseAssignments", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_CourseAssignments_Course_CourseId",
+                        name: "FK_CourseAssignments_Courses_CourseId",
                         column: x => x.CourseId,
-                        principalTable: "Course",
+                        principalTable: "Courses",
                         principalColumn: "CourseID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -149,9 +149,9 @@ namespace _2025contosofuckinyay.Migrations
                 {
                     table.PrimaryKey("PK_Enrollments", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Enrollments_Course_CourseID",
+                        name: "FK_Enrollments_Courses_CourseID",
                         column: x => x.CourseID,
-                        principalTable: "Course",
+                        principalTable: "Courses",
                         principalColumn: "CourseID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -163,11 +163,6 @@ namespace _2025contosofuckinyay.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Course_DepartmentId",
-                table: "Course",
-                column: "DepartmentId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_CourseAssignments_CourseId",
                 table: "CourseAssignments",
                 column: "CourseId");
@@ -176,6 +171,11 @@ namespace _2025contosofuckinyay.Migrations
                 name: "IX_CourseAssignments_InstructorId",
                 table: "CourseAssignments",
                 column: "InstructorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Courses_DepartmentId",
+                table: "Courses",
+                column: "DepartmentId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Departments_InstructorID",
@@ -212,7 +212,7 @@ namespace _2025contosofuckinyay.Migrations
                 name: "OfficeAssignments");
 
             migrationBuilder.DropTable(
-                name: "Course");
+                name: "Courses");
 
             migrationBuilder.DropTable(
                 name: "Students");

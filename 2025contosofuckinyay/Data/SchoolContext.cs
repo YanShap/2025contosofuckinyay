@@ -13,6 +13,7 @@ namespace _2025contosofuckinyay.Data
         public DbSet<OfficeAssignment> OfficeAssignments { get; set; }
         public DbSet<CourseAssignment> CourseAssignments { get; set; }
         public DbSet<Department> Departments { get; set; }
+        public DbSet<Course> Courses { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -23,6 +24,7 @@ namespace _2025contosofuckinyay.Data
             modelBuilder.Entity<OfficeAssignment>().ToTable("OfficeAssignments");
             modelBuilder.Entity<CourseAssignment>().ToTable("CourseAssignments");
             modelBuilder.Entity<Department>().ToTable("Departments");
+            modelBuilder.Entity<Course>().ToTable("Courses");
 
 
 
