@@ -105,12 +105,6 @@ namespace _2025contosofuckinyay.Controllers
             return RedirectToAction("Index", department);
         }
         [HttpGet]
-        public IActionResult Make()
-        {
-            ViewData["InstructorID"] = new SelectList(_context.Instructors, "Id", "FullName");
-            return View();
-
-        }
         public async Task<IActionResult> BaseOn(int ID)
         {
             if (ID == null)
@@ -126,41 +120,55 @@ namespace _2025contosofuckinyay.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> BaseOn([Bind("Name,Budget,OpeningDate,Address,OpenTime,Description,ShortName,InstructorID,Administrator")] Department department)
+        public async Task<IActionResult> BaseOn([Bind("Id,Name,Budget,OpeningDate,Address,OpenTime,Description,ShortName,InstructorID,Administrator")] Department department, string action)
         {
-            department.Id = 0;
-            _context.Departments.Add(department);
-            await _context.SaveChangesAsync();
-            return RedirectToAction("Index", department);
-        }
-
-        public async Task<IActionResult> Make(int ID)
-        {
-            var department = await _context.Departments.FirstOrDefaultAsync(s => s.Id == ID);
-            if (department == null)
+            if (action  == "Make") 
             {
-                return NotFound();
+
+                var newDepartment = new Department
+                {
+                    Name = department.Name,
+                    Budget = department.Budget,
+                    OpeningDate = department.OpeningDate,
+                    Address = department.Address,
+                    OpenTime = department.OpenTime,
+                    Description = department.Description,
+                    ShortName = department.ShortName,
+                    InstructorID = department.InstructorID,
+                    Administrator = department.Administrator
+                };
+                department.Id = 0;
+                _context.Departments.Add(department);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
             }
-
-
-            var cloneDepartment = new Department()
+            else if (action == "MakeAndDeleteOld")
             {
+                
+                var newDepartment = new Department
+                {
+                    Name = department.Name,
+                    Budget = department.Budget,
+                    OpeningDate = department.OpeningDate,
+                    Address = department.Address,
+                    OpenTime = department.OpenTime,
+                    Description = department.Description,
+                    ShortName = department.ShortName,
+                    InstructorID = department.InstructorID,
+                    Administrator = department.Administrator
+                };
 
-            };
+                _context.Departments.Add(newDepartment);
+                var oldDepartment = await _context.Departments.FindAsync(department.Id);
+                if (oldDepartment != null)
+                {
+                    _context.Departments.Remove(oldDepartment);
+                }
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
 
-            cloneDepartment.Name = department.Name;
-            cloneDepartment.Budget = department.Budget;
-            cloneDepartment.OpeningDate = department.OpeningDate;
-            cloneDepartment.Address = department.Address;
-            cloneDepartment.OpenTime = department.OpenTime;
-            cloneDepartment.Description = department.Description;
-            cloneDepartment.ShortName = department.ShortName;
-            cloneDepartment.InstructorID = department.InstructorID;
-            cloneDepartment.Administrator = department.Administrator;
-
-            _context.Departments.Add(cloneDepartment);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            }
+            return View(department);
         }
     }
 }

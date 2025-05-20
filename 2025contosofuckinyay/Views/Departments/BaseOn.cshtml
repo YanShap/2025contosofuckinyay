@@ -7,7 +7,7 @@
 
 <div class="row">
 	<div class="col-md-4">
-		<form asp-action="Make">
+		<form asp-action="BaseOn">
 
 
 			<div class="form-group">
@@ -46,18 +46,19 @@
 				<span asp-validation-for="ShortName" class="text-danger"></span>
 			</div>
 			<div class="form-group">
+				<label asp-for="InstructorID" class="control-label"></label>
+				<input asp-for="InstructorID" class="form-control" />
+				<span asp-validation-for="InstructorID" class="text-danger"></span>
+			</div>
+			<div class="form-group">
 				<label asp-for="Administrator" class="control-label"></label>
 				<input asp-for="Administrator" class="form-control" />
 				<span asp-validation-for="Administrator" class="text-danger"></span>
 			</div>
-			<div class="form-group">
-				<label asp-for="Courses" class="control-label"></label>
-				<input asp-for="Courses" class="form-control" />
-				<span asp-validation-for="Courses" class="text-danger"></span>
-			</div>
+			
 			<input type="hidden" asp-for="Id" />
-			<button type="submit" name="action" value="make" class="btn btn-primary">Make</button>
-			<button type="submit" name="action" value="makeAndDelete" class="btn btn-primary">Make & Delete Old</button>
+			<button type="submit" name="action" value="Make" class="btn btn-primary">Make</button>
+			<button type="submit" name="action" value="MakeAndDeleteOld" class="btn btn-primary">Make & Delete Old</button>
 
 
 
